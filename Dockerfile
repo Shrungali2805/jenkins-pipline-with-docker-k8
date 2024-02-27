@@ -1,8 +1,8 @@
 # Use the official Tomcat image from Docker Hub
-FROM tomcat:8.5.99-jdk21-corretto-al2
+FROM tomcat:latest
 
 # Set the working directory inside the container
-WORKDIR /usr/local/apache-tomcat-8.5.99/
+WORKDIR /usr/local/tomcat
 
 # (Optional) Remove the default webapps directory
 RUN rm -rf webapps/*
