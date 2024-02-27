@@ -14,6 +14,9 @@ pipeline {
             }
         }
         stage('creating tomcat image Tomcat') {
+            agent{ 
+             label 'docker'
+            }
             steps {
                 script {
                     sh '''cd /var/lib/jenkins/workspace/demo/
@@ -24,13 +27,20 @@ pipeline {
             }
         }
         stage('build image on k8 ') {
+            agent {
+                 labels 'docker'
+            }
             steps {
                 script {
                     sh 'kubectl apply -f deployment.yaml'
                 }
             }
         }
-        stage('getting information') {
+        stage('getting information') { 
+            agent { 
+                labels 'docker'
+
+            }
             steps {
                 script {
                     sh '''kubectl get pods -o wide 
