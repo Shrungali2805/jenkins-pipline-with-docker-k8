@@ -19,10 +19,10 @@ pipeline {
             }
             steps {
                 script {
-                    sh '''cd /var/lib/jenkins/workspace/demo/
-                    docker build -t shrungali2805/my-repo .
-                    docker login 
-                    docker push shrungali2805/my-repo'''
+                    sh '''sudo cd /var/lib/jenkins/workspace/demo/
+                    sudo docker build -t shrungali2805/my-repo .
+                    sudo docker login 
+                    sudo docker push shrungali2805/my-repo'''
                 }
             }
         }
