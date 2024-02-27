@@ -16,7 +16,7 @@ pipeline {
         stage('creating tomcat image Tomcat') {
             steps {
                 script {
-                    sh '''sudo cp -r /var/lib/jenkins/workspace/demo/target/*.war/ /var/lib/jenkins/workspace/demo/
+                    sh '''sudo cd /var/lib/jenkins/workspace/demo/
                     docker build -t shrungali2805/my-repo .
                     docker login 
                     docker push shrungali2805/my-repo'''
